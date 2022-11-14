@@ -1,0 +1,13 @@
+.card {
+  background-color: aquamarine;
+}
+
+.title {
+  color: red;
+}
+
+.inside {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
