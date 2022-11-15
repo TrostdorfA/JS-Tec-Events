@@ -95,3 +95,23 @@ window.onload = () => {
     }
   })
 }
+
+// Practice for checkbox
+
+const listItems = document.getElementById("list-items")
+const buttonForm = document.getElementById("button-form")
+const inputsCheckbox = document.querySelectorAll(".inputs-checkbox")
+
+buttonForm.addEventListener("click", (event) => {
+  console.log("event", event)
+  listItems.innerHTML = ""
+  inputsCheckbox.forEach((inputCheckbox) => {
+    if (inputCheckbox.checked) {
+      console.log("A ver que onda los inputs")
+      console.log(inputCheckbox)
+      const li = document.createElement("li")
+      li.textContent = inputCheckbox.value
+      listItems.appendChild(li)
+    }
+  })
+})
