@@ -76,3 +76,22 @@ const showDataInDOM = async () => {
   document.body.appendChild(newUl)
 }
 showDataInDOM()
+
+// Aca va lo de las clases anteriores
+
+const someFunction = () => {
+  const greeting = "Hello dev friends"
+  // Intentara resolver este fragmento de codigo
+  try {
+    // Si no hay errores, se ejecuta el codigo
+    console.log(greeting)
+    // Si hay errores, se ejecuta el catch
+  } catch (error) {
+    // Si hay errores, se ejecuta el catch
+    console.log(error)
+  } finally {
+    // Siempre se ejecuta
+    console.log("I will always run")
+  }
+}
+someFunction()
