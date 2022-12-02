@@ -77,7 +77,53 @@ const showDataInDOM = async () => {
 }
 showDataInDOM()
 
-// Aca va lo de las clases anteriores
+const API_URL_EVENTS = "https://amazing-events-api.herokuapp.com/api/events"
+
+const getEvents = async () => {
+  const response = await fetch(API_URL_EVENTS)
+  const dataEvents = await response.json()
+  console.log("Events", dataEvents)
+  console.log("Array de eventos", dataEvents.events)
+
+  // Utilizamos spread operator para agregarle una nueva key a la respuesta de la api
+  const newData = {
+    ...dataEvents,
+    havePerrito: false,
+  }
+
+  eventsInDom(dataEvents)
+}
+getEvents()
+
+const eventsInDom = (dataEvents) => {
+  // Working with destructuring
+
+  // Esto seria con la forma clasica de asignar una variable para cada key que obetenemos de nuestro objeto
+  // const events = dataEvents.events
+  // const currentDate = dataEvents.currentDate
+
+  // const { events } = dataEvents // Output: Array de eventos
+  // const { currentDate } = dataEvents // Output: 2021-05-25T20:00:00.000Z
+  // const { tuki } = dataEvents // Output: undefined
+
+  // Destructuring - Option #1
+  // const { events, currentDate, havePerrito } = dataEvents
+  console.log("Informacion para pintar en el DOM", dataEvents)
+  // console.log("Events with destructuring", events)
+  // console.log("CurrentDate with destructuring", currentDate)
+  // console.log("Tuki with destructuring", tuki)
+  console.log("Tiene perrito", havePerrito)
+}
+
+// Destructuring - Option #2
+const eventsInDOM = ({ events, currentDate, havePerrito }) => {
+  // Esto se puede reemplazar por poner el nombre de las keys dentro del parametro de la funcion
+  const { events, currentDate, havePerrito } = dataEvents
+
+  console.log("Events with destructuring", events)
+  console.log("CurrentDate with destructuring", currentDate)
+  console.log("Tiene perrito", havePerrito)
+}
 
 const someFunction = () => {
   const greeting = "Hello dev friends"
