@@ -116,14 +116,24 @@ const eventsInDom = (dataEvents) => {
 }
 
 // Destructuring - Option #2
-const eventsInDOM = ({ events, currentDate, havePerrito }) => {
-  // Esto se puede reemplazar por poner el nombre de las keys dentro del parametro de la funcion
-  const { events, currentDate, havePerrito } = dataEvents
+// const eventsInDOM = ({ events, currentDate, havePerrito }) => {
+//   // Esto se puede reemplazar por poner el nombre de las keys dentro del parametro de la funcion
+//   const { events, currentDate, havePerrito } = dataEvents
 
-  console.log("Events with destructuring", events)
-  console.log("CurrentDate with destructuring", currentDate)
-  console.log("Tiene perrito", havePerrito)
+//   console.log("Events with destructuring", events)
+//   console.log("CurrentDate with destructuring", currentDate)
+//   console.log("Tiene perrito", havePerrito)
+// }
+
+// Axios - Promise based HTTP client for the browser and node.js
+
+const getUsersWithAxios = async () => {
+  const getDataAxios = await axios.get(API_URL)
+  const { data } = getDataAxios
+  console.log("dataUsers", data)
+  console.log("getDataAxios", getDataAxios)
 }
+getUsersWithAxios()
 
 const someFunction = () => {
   const greeting = "Hello dev friends"
@@ -141,3 +151,16 @@ const someFunction = () => {
   }
 }
 someFunction()
+
+const API_URL_PRODUCTS = "https://fakestoreapi.com/products"
+
+const getProducts = async () => {
+  try {
+    const response = await axios.get(API_URL_PRODUCTS)
+    const { data } = response
+    console.log("dataProducts", data)
+  } catch (error) {
+    console.log(error)
+  }
+}
+getProducts()
