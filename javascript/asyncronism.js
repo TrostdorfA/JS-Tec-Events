@@ -322,3 +322,5 @@ const getUserFromLocalStorage = () => {
 }
 
 getUserFromLocalStorage()
+
+// Trying commit via VSCode
