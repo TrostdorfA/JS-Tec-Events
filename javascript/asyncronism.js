@@ -164,3 +164,61 @@ const getProducts = async () => {
   }
 }
 getProducts()
+
+const toStringity = {
+  name: "Tuki",
+  age: 2,
+  color: "black",
+  favouriteFood: "chicken",
+  isCute: true,
+}
+
+const stringified = JSON.stringify(toStringity)
+console.log("stringified", stringified)
+
+const parsed = JSON.parse(stringified)
+console.log("parsed", parsed)
+
+const productToPost = {
+  title: "My new product",
+  price: 12.99,
+  description: "This is a new product",
+  category: "electronics",
+  image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+}
+
+const postRequestToFakeStoreApi = async () => {
+  // En una request de tipo POST utilizando Fetch, el primer parametro es la URL a la que queremos hacer la peticion y el segundo parametro es un objeto con la configuracion de la peticion
+  fetch(API_URL_PRODUCTS, {
+    // El verbo HTTP que queremos utilizar a traves de la key "method"
+    // El content-type de la peticion a traves de la key "headers"
+    // El body de la peticion a traves de la key "body"
+    method: "POST",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+    body: JSON.stringify(productToPost),
+  })
+    .then((response) => response.json())
+    .then((data) => console.log("data", data))
+}
+postRequestToFakeStoreApi()
+
+const usersToPost = {
+  name: "Tuki",
+  job: "Developer",
+}
+
+const UTL_REQRES_POST = "https://reqres.in/api/users"
+const postRequestToRegresApi = async () => {
+  const response = await fetch(UTL_REQRES_POST, {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+    body: JSON.stringify(usersToPost),
+  })
+  const data = await response.json()
+  console.log("Post a ReqRes", data)
+}
+postRequestToRegresApi()

@@ -1,0 +1,16 @@
+{
+    "name": "jquery-1.7.2.js",
+    "version": "1.7.2",
+    "description": "jQuery JavaScript Library v1.7.2",
+    "main": "jquery-1.7.2.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "isCute": true
+}
+
