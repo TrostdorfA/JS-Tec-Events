@@ -1,0 +1,3 @@
+// El archivo .gitignore sirve para que git ignore los archivos que se le indiquen. Por ejemplo, si tenemos un proyecto en el que usamos un IDE como Eclipse, podemos indicarle a git que ignore los archivos de configuración de Eclipse, para que no se suban al repositorio. Para ello, en el archivo .gitignore escribimos lo siguiente:
+
+/node_modules

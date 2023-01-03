@@ -222,3 +222,103 @@ const postRequestToRegresApi = async () => {
   console.log("Post a ReqRes", data)
 }
 postRequestToRegresApi()
+
+const getUsersJsonServer = async () => {
+  const response = await fetch("http://localhost:3000/users")
+  const data = await response.json()
+  console.log("data", data)
+}
+
+getUsersJsonServer()
+
+// const URL_TO_REPLACE =
+//   "https://www.lanacion.com.ar/resizer/{{param}}/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/UMAYEMJ42FETTEDET6JQPJSKNM.png"
+
+// console.log("URL_TO_REPLACE", URL_TO_REPLACE)
+
+// const parameters = [
+//   {
+//     media: 1024,
+//     ancho: 360,
+//     alto: 240,
+//     firma: "kAMZ8AkR_9MQGz5ZQ4Z7ZQ",
+//   },
+//   {
+//     media: 768,
+//     ancho: 768,
+//     alto: 512,
+//     firma: "c2Z8AkR_9MQGz5ZQ4Z7ZQ",
+//   },
+//   {
+//     media: 351,
+//     ancho: 351,
+//     alto: 234,
+//     firma: "s9pUIvK_9MQGz5ZQ4Z7ZQ",
+//   },
+//   {
+//     media: 360,
+//     ancho: 360,
+//     alto: 240,
+//     firma: "kAMZ8AkR_9MQGz5ZQ4Z7ZQ",
+//   },
+// ]
+
+// const replaceUrl = (url, parameters) => {
+//   return parameters.map((parameter) => {
+//     const newURL = url.replace("{{param}}", parameter.firma)
+//     return {
+//       url: newURL,
+//       media: parameter.media,
+//       width: parameter.ancho,
+//       height: parameter.alto,
+//     }
+//   })
+// }
+
+// replaceUrl(URL_TO_REPLACE, parameters)
+
+// Comenzando con Persistencia de datos - LocalStorage
+
+// Obtener el valor de una key
+const usernameInLocalStorage = localStorage.getItem("username")
+console.log("usernameInLocalStorage", usernameInLocalStorage)
+
+const tokenInLocalStorage = localStorage.getItem("token")
+console.log("tokenInLocalStorage", tokenInLocalStorage)
+
+// Para borrar un valor del local storage utilizamos la funcion removeItem
+localStorage.removeItem("password")
+
+// Para borrar todos los valores del local storage utilizamos la funcion clear
+localStorage.clear()
+
+const setUserInLocalStorage = () => {
+  // Aca iria la logica asociada a esta funcion que ademas guardaria en el local storage
+  const username = "Andy"
+  const password = "123456"
+
+  // Guardar un valor en el local storage
+  localStorage.setItem("username", username)
+  localStorage.setItem("password", password)
+
+  const user = {
+    username,
+    password,
+  }
+  console.log("user", user)
+  localStorage.setItem("user", JSON.stringify(user))
+}
+
+setUserInLocalStorage()
+
+const getUserFromLocalStorage = () => {
+  const username = localStorage.getItem("username")
+  const password = localStorage.getItem("password")
+  const user = JSON.parse(localStorage.getItem("user"))
+
+  console.log("username", username)
+  console.log("password", password)
+  console.log("user", user)
+}
+
+getUserFromLocalStorage()

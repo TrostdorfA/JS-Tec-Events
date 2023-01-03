@@ -1,0 +1,31 @@
+{
+  "name": "funcionesclase",
+  "version": "1.0.0",
+  "description": "First Proyect with NodeJS from HTTP Request",
+  "main": "asyncronism.js",
+  "scripts": {
+    "json:server": "json-server --watch db.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrostdorfA/JS-Tec-Events.git"
+  },
+  "keywords": [
+    "first-project",
+    "node",
+    "package",
+    "asynchronism"
+  ],
+  "author": "Andy Tukis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TrostdorfA/JS-Tec-Events/issues"
+  },
+  "homepage": "https://github.com/TrostdorfA/JS-Tec-Events#readme",
+  "dependencies": {
+    "json-server": "^0.17.1",
+    "sweetalert": "^2.1.2"
+  },
+  "type": "module"
+}
